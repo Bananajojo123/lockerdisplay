@@ -1,6 +1,6 @@
 html, body { height: 100%; padding: 0; margin: 0; }
 div { width: 50%; height: 50%; float: left; }
-#div1 { background: #DDD; vertical-align: middle; line-height: 1.5; display: inline-block; }
+#div1 { background: #DDD; }
 #div2 { background: #AAA; }
 #div3 { background: #777; }
 #div4 { background: #444; }
@@ -36,4 +36,12 @@ ul {
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+.zoom {
+    transition: transform .2s; /* Animation */
+    margin: 0 auto;
+  }
+  
+  .zoom:hover {
+    transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
   }
