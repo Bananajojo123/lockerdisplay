@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <link rel = "stylesheet" type = "text/css" href = "main.css" />
+    <ul>
+        <li style="width: 100%"><p id="clockbox" class="centered"></p></li>
+        <li style = "width: 100%"><script type='text/javascript' src='https://darksky.net/widget/default-small/46.8701,-113.9953/us12/en.js?width=100%&height=70&title=Full Forecast&textColor=ffffff&bgColor=000000&transparency=false&skyColor=undefined&fontFamily=Default&customFont=&units=us'></script></li>
+        <!-- <li><a href="contact.asp">Contact</a></li>
+        <li><a href="about.asp">About</a></li> -->
+    </ul>  
+    <div id="div1">
+        1
+    </div>
+    <div id="div2">
+        2
+    </div>
+    <div id="div3">
+        3
+    </div>
+    <div id="div4">
+        4
+    </div>
+
+    <!-- For Clock -->
+    <script type="text/javascript">
+        var tday=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        var tmonth=["January","February","March","April","May","June","July","August","September","October","November","December"];
+        
+        function GetClock(){
+        var d=new Date();
+        var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getFullYear();
+        var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
+        
+        if(nhour==0){ap=" AM";nhour=12;}
+        else if(nhour<12){ap=" AM";}
+        else if(nhour==12){ap=" PM";}
+        else if(nhour>12){ap=" PM";nhour-=12;}
+        
+        if(nmin<=9) nmin="0"+nmin;
+        if(nsec<=9) nsec="0"+nsec;
+        
+        var clocktext=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
+        document.getElementById('clockbox').innerHTML=clocktext;
+        }
+        
+        GetClock();
+        setInterval(GetClock,1000);
+    </script>
+
+</html>
